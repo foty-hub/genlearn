@@ -9,13 +9,9 @@ from torch.utils.data import DataLoader, random_split
 
 __all__ = ["get_dataloaders"]
 
-data_path = "../data/mnist"
-trainval = torchvision.datasets.MNIST(
-    data_path, download=True, transform=lambda im: pil_to_jax(im, ismnist=True)
-)
-
 
 def get_dataloaders(
+    trainval,
     val_frac: float = 0.1,
     batch_size: int = 64,
     shuffle: bool = True,
@@ -37,3 +33,29 @@ def get_dataloaders(
     )
 
     return trainloader, valloader
+
+
+def get_mnist_dataloaders(
+    val_frac: float = 0.1,
+    batch_size: int = 64,
+    shuffle: bool = True,
+    seed: int = 42,
+):
+    data_path = "../data/mnist"
+    trainval = torchvision.datasets.MNIST(
+        data_path, download=True, transform=lambda im: pil_to_jax(im, ismnist=True)
+    )
+    return get_dataloaders(trainval, val_frac, batch_size, shuffle, seed)
+
+
+def get_cifar_dataloaders(
+    val_frac: float = 0.1,
+    batch_size: int = 64,
+    shuffle: bool = True,
+    seed: int = 42,
+):
+    data_path = "../data"
+    trainval = torchvision.datasets.CIFAR10(
+        data_path, download=True, transform=lambda im: pil_to_jax(im, ismnist=False)
+    )
+    return get_dataloaders(trainval, val_frac, batch_size, shuffle, seed)
