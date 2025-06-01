@@ -1,5 +1,6 @@
 import jax.numpy as jnp
 import numpy as np
+from torch.utils.data import default_collate
 from einops import rearrange
 from PIL import Image
 import jax
@@ -40,6 +41,6 @@ def jax_to_pil(img_jnp):
     return Image.fromarray(np.array(img_jnp))
 
 
+# taken from https://cloud.google.com/blog/products/ai-machine-learning/guide-to-jax-for-pytorch-developers
 def jax_collate(batch):
-    imgs, labels = zip(*batch)
-    return jnp.stack(imgs), jnp.array(labels)
+    return jax.tree.map(jnp.asarray, default_collate(batch))
