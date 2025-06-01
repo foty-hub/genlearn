@@ -7,7 +7,7 @@ import torchvision
 import torch
 from torch.utils.data import DataLoader, random_split
 
-__all__ = ["get_dataloaders"]
+__all__ = ["get_dataloaders", "get_mnist_dataloaders", "get_cifar_dataloaders"]
 
 
 def get_dataloaders(
