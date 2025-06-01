@@ -1,18 +1,19 @@
 """
 MNIST data utilities for genlearn.
 """
+
 from genlearn.utils import pil_to_jax, jax_collate
 import torchvision
 import torch
 from torch.utils.data import DataLoader, random_split
 
-__all__ = ["get_dataloaders", "trainval", "mnist_transform", "data_path"]
+__all__ = ["get_dataloaders"]
 
 data_path = "../data/mnist"
-mnist_transform = lambda im: pil_to_jax(im, ismnist=True)
 trainval = torchvision.datasets.MNIST(
-    data_path, download=True, transform=mnist_transform
+    data_path, download=True, transform=lambda im: pil_to_jax(im, ismnist=True)
 )
+
 
 def get_dataloaders(
     val_frac: float = 0.1,
