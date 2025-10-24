@@ -1,8 +1,7 @@
-import jax.numpy as jnp
 import flax.linen as nn
-
-from einops import rearrange
+import jax.numpy as jnp
 from distrax import MultivariateNormalDiag
+from einops import rearrange
 
 
 class VAE(nn.Module):
