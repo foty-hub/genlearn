@@ -34,6 +34,26 @@ wheels = [
 ]
 
 [[package]]
+name = "array-record"
+version = "0.8.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "absl-py" },
+    { name = "etils", extra = ["epath"] },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/ee/a7379ccf12c41d80a268bfa25adc4dd64a6ccfa0e075e2fe64e398a5918a/array_record-0.8.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:a7f20b67c530899459c828ef3b7cd5fea2812f111be9f607a400564d0871384d", size = 1967262, upload-time = "2025-10-27T15:41:54.36Z" },
+    { url = "https://files.pythonhosted.org/packages/f0/44/657fe31c2588dc06c9551ed3cef2f1010314f130eafddcba677640f8cbbc/array_record-0.8.2-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:580656ed39ad5e4a6da6edcd1d5c775212426a3b558d9e59ccd5550eb4b83eae", size = 2407589, upload-time = "2025-10-27T15:41:55.702Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/c8/c4ce48a96f26059206bcc0b9b6e4725fdb0f088cb496afa23b4218f363ce/array_record-0.8.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:337c382309b5a6b28ef669e45a270dadf6a112a196c9497dce722f242e8c342b", size = 2465198, upload-time = "2025-10-27T15:41:57.386Z" },
+    { url = "https://files.pythonhosted.org/packages/a7/13/5004447d06bc03d5eaf66bc04623c46e8d56fc5ceef3d0e60e514b38f2ac/array_record-0.8.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:c4f1c8ec3958cc0de0e4a45f47df7e36c73e194fa1741aa228b9a8f8e502788c", size = 1967353, upload-time = "2025-10-27T15:41:58.967Z" },
+    { url = "https://files.pythonhosted.org/packages/e8/a5/9bc81ff731e45dd61b130a4695bf028b8282e0fb7d3cca080bfee2745cc7/array_record-0.8.2-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:6e2ed50f67b0808955c0d3f13e6788556c8321e1e4192c567280f06a795474ea", size = 2407692, upload-time = "2025-10-27T15:42:00.173Z" },
+    { url = "https://files.pythonhosted.org/packages/d6/b6/aac7ec4a0fd43139ae44927dfedd34cc0186084e7f197a3292c8a745a877/array_record-0.8.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f121278953c847ff17b45afb752f009f9c37a4dc854572b6087800bdeb6fd41a", size = 2465490, upload-time = "2025-10-27T15:42:01.398Z" },
+    { url = "https://files.pythonhosted.org/packages/f9/ed/306eaddc69c3828384823bc87e74ab58376a988c12d6f834c4ea6f8f8cb1/array_record-0.8.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:917809213b5bcf5bc09852ccbce69048d207a083e9f18e78b960541526d02de1", size = 1967236, upload-time = "2025-10-27T15:42:02.657Z" },
+    { url = "https://files.pythonhosted.org/packages/25/33/352ed4888fc3399ea5744486af471ed74873da9ce9a4fa7a9c9293792c05/array_record-0.8.2-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:4545d732a9d703e689b3b8f8a0693f37dff749cf44324c1b59a68e78bc0b0143", size = 2408029, upload-time = "2025-10-27T15:42:04.311Z" },
+    { url = "https://files.pythonhosted.org/packages/7c/27/06d54aa4b7eb26a223296e8fb96fd5412fae97e3aef0b175766bfa8ed24c/array_record-0.8.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:92d3f3eaab50f568b0c311f9d64cb9932c9fd257174b42ba096c54adb1ec99e9", size = 2465325, upload-time = "2025-10-27T15:42:05.698Z" },
+]
+
+[[package]]
 name = "asttokens"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -368,10 +388,12 @@ dependencies = [
     { name = "distrax" },
     { name = "einops" },
     { name = "flax" },
+    { name = "grain" },
     { name = "ipykernel" },
     { name = "jax" },
     { name = "matplotlib" },
     { name = "optax" },
+    { name = "orbax-checkpoint" },
     { name = "pillow" },
     { name = "torch" },
     { name = "torchvision" },
@@ -383,14 +405,43 @@ requires-dist = [
     { name = "distrax", specifier = ">=0.1.7" },
     { name = "einops", specifier = ">=0.8.1" },
     { name = "flax", specifier = ">=0.12.0" },
+    { name = "grain", specifier = ">=0.2.14" },
     { name = "ipykernel", specifier = ">=6.29.5" },
     { name = "jax", specifier = ">=0.6.1" },
     { name = "matplotlib", specifier = ">=3.10.3" },
     { name = "optax", specifier = ">=0.2.4" },
+    { name = "orbax-checkpoint", specifier = ">=0.11.26" },
     { name = "pillow", specifier = ">=11.2.1" },
     { name = "torch", specifier = ">=2.7.0" },
     { name = "torchvision", specifier = ">=0.22.0" },
     { name = "tqdm", specifier = ">=4.67.1" },
+]
+
+[[package]]
+name = "grain"
+version = "0.2.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "absl-py" },
+    { name = "array-record", marker = "sys_platform != 'win32'" },
+    { name = "cloudpickle" },
+    { name = "etils", extra = ["epath", "epy"] },
+    { name = "numpy" },
+    { name = "protobuf" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c5/b8/8315fd20ca0e5c06efa5e98b4f9a1f4c0da0accccca18a5240939a0ab3ee/grain-0.2.14-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:9b5df83262c732c5d0ce84826a01651ab35309afc1165f552df84d255e610feb", size = 443507, upload-time = "2025-10-30T20:33:34.069Z" },
+    { url = "https://files.pythonhosted.org/packages/df/ec/03b6f7dfccdd6c8291b977aba08c72d24bbcbaae3eff585927ff17859d6d/grain-0.2.14-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:97da8553c1c7d332c31f20afd3506ddaff8dd310b7a9d8326575504e57f41ef3", size = 493682, upload-time = "2025-10-30T20:33:35.224Z" },
+    { url = "https://files.pythonhosted.org/packages/60/26/3422ac4acf04fc88a6d66bb78b0d1749709d45f7985abd6ced523e2b20ac/grain-0.2.14-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:1fffad439957ac5a77de7b506f46e93ac83ba2c242d7dd275fc159c1b9ec842b", size = 494493, upload-time = "2025-10-30T20:33:36.648Z" },
+    { url = "https://files.pythonhosted.org/packages/20/03/2b151e56a5756ac3f6aef37c5e82ddf8bb29d8d844283d5ce89714bbe700/grain-0.2.14-cp312-cp312-win_amd64.whl", hash = "sha256:e3a1bbf13e46b3f7b44ae79544a0061f7ed33df70a38b2b7831c9c145c578b6e", size = 435071, upload-time = "2025-10-30T20:33:37.579Z" },
+    { url = "https://files.pythonhosted.org/packages/a1/e4/956eb79adaaca32e1e67cec87b3bf6ab975077ffba1b8045872819fb26c1/grain-0.2.14-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:853438142e48dc8d8678eb81f560301a33e9a7c8cb7c05482ea057a3d4fd9c18", size = 443572, upload-time = "2025-10-30T20:33:38.973Z" },
+    { url = "https://files.pythonhosted.org/packages/f0/a2/bcd380e84db1a0cc7cc5954c7d4957e25927803b1985247a6f5bbba2723e/grain-0.2.14-cp313-cp313-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:233ca9b99dff826ce273c8b8e5c32c699259537d2daede2f8c8412591c6b3a6f", size = 493730, upload-time = "2025-10-30T20:33:40.041Z" },
+    { url = "https://files.pythonhosted.org/packages/a4/f3/113e336dd308a3eca818fcf57edb5629431fbbe8fa0ba655741e4cdfca80/grain-0.2.14-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:93f3fbe6204af859582aa7e59e0836b4d42b5e15e182d04e983e65e5c3582119", size = 494724, upload-time = "2025-10-30T20:33:41.029Z" },
+    { url = "https://files.pythonhosted.org/packages/82/5f/41bf644f31538e961aa74a4c138a28b9c071874d6b2a36eb5027ba347331/grain-0.2.14-cp313-cp313-win_amd64.whl", hash = "sha256:d5da21357f8aea655e03fc7e55ffff2bacb1183a07aaa772a9e12588237c611c", size = 435200, upload-time = "2025-10-30T20:33:42.028Z" },
+    { url = "https://files.pythonhosted.org/packages/17/07/525eb7ecb1823e9e65c79c0538b5c0148aa209f0ff15cbc0983b3e790a9e/grain-0.2.14-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:24c088fc20fa13347e67e9cee1fcc10b8ee020657de8006a1fd95b7dfbee49f4", size = 443601, upload-time = "2025-10-30T20:33:42.983Z" },
+    { url = "https://files.pythonhosted.org/packages/4d/5b/6510529b53d37bfbdfb30d37e976ef6d1539f26d7c0d99c09ead0b1eb8ac/grain-0.2.14-cp314-cp314-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:20613227c91939414b8982127ce0032e7b1f759fbe22bd6ff8cd1358f1b2e073", size = 493736, upload-time = "2025-10-30T20:33:44.292Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/a2/7c6f7e6e2432fa7ec3d434e851f629ad44f00d90985db127accba21f4caf/grain-0.2.14-cp314-cp314-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:def230b5d74e8a1debd4008ec8d58e8e18270f328514d3482b473583f8432c3c", size = 494669, upload-time = "2025-10-30T20:33:45.686Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/fb/0694cad5fe468270fc8ee4d133ebf98c564806039b38c4562bb1828f915c/grain-0.2.14-cp314-cp314-win_amd64.whl", hash = "sha256:a0fffd45c001cb0fc0b67ced6e2b865c7a105a80454b1d865b233678d8985692", size = 441417, upload-time = "2025-10-30T20:33:47.441Z" },
 ]
 
 [[package]]
