@@ -36,6 +36,8 @@ def get_shakespeare_dataset() -> jax.Array:
     1 - start
     2 - end
     rest = ord(c) - 27
+
+    Padded to length 128
     """
     data_path = pathlib.Path(__file__).parents[3] / "data" / "shakespeare.txt"
 
