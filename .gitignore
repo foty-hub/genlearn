@@ -8,5 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
-data/
+data/*
 .DS_Store
+
+!data/shakespeare.txt
